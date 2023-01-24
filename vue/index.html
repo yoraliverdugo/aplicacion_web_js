@@ -6,23 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
     <h1></h1>
 
-    
 
-     <div id="app">
 
-     <!--   <h1 v-if="activo=true">Holaaaaaaaa</h1>
+    <div id="app">
+
+        <!--   <h1 v-if="activo=true">Holaaaaaaaa</h1>
        <button @click="activo=true">Activar</button>
        <button @click="activo=false">Desactivar</button> -->
-     
-       <!-- <h1>Mi nombre es: </h1>
+
+        <!-- <h1>Mi nombre es: </h1>
        <input v-model="nombre" type="text"> -->
 
-   <!--     <h1>Mi carrera es: </h1>
+        <!--     <h1>Mi carrera es: </h1>
        <select v-model="carrera">
         <option>Ingenieria en Sistemas</option>
         <option>Ingenieria en Mecatronica</option>
@@ -30,21 +37,39 @@
         <option>Ingenieria en Mantenimiento Industrial</option>
         <option>Licenciatura en Medicina</option> -->
 
-        
-        <h1>Calcula tu edad: </h1> 
+
+        <!--  <h1>Calcula tu edad: </h1> 
         <input v-model="edad" type="number">
         <button @click="calcularedad()">Calcular</button>
         <p>{{resultado}}</p>
-    
-      
-        
+     -->
 
-     </div>
-     
+        <h1>Mis compras</h1>
+        <input v-model="producto" placeholder="nombre del producto" type="text">
+        <button @click="agregar()">Agregar</button>
+        <button @click="carrito=[]">Limpiar</button>
+        
+        <ul>
+            <li v-for="producto in carrito">
+                {{producto}}
+            </li>
+        </ul> 
+
+       <table>
+        
+            <tr v-for="producto in carrito">
+                <th>{{producto}}</th>
+                
+            </tr>
+
+
+        </table> 
+    </div>
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <script src="model.js"></script>
-   
+    <script src="carrito.js"></script>
+
 
 </body>
 
