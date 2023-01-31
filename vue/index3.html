@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container m-3" id="app">
+        <h1>Mi progreso</h1>
+        <label class="form-label">Rangos</label>
+        <input min="0" max="100" type="range" v-model="rango"  v-model="imagen" class="form-range">
+       
+
+
+        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100">
+            <div class="progress-bar" :style="'width: '+rango+'%'"></div>
+            
+
+        </div>
+        <img src="https://www.elsoldeleon.com.mx/doble-via/virales/qhfroh-conoce-la-historia-del-famoso-flork-1.jpg/ALTERNATES/FREE_768/Conoce-la-historia-del-famoso-%E2%80%9CFlork%E2%80%9D%20(1).jpg"
+        :style="'width: '+rango+'%'">
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="ejercicio4.js"></script>
+
+     
+
+</body>
+
+</html>
