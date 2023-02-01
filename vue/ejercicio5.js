@@ -6,16 +6,22 @@ Vue.createApp({
     }, 
     computed: {
         frutas() {
-            if(this.fruta == Tomate){
+            if(this.fruta == "opcion1"){
 
-                return <img src="https://th.bing.com/th/id/OIP.jP2VYVGUy-fX0djlFDZGfAHaE6?pid=ImgDet&rs=1" alt=""></img>
+                return "https://th.bing.com/th/id/OIP.jc068ISPd123C9SXD6CaJwHaE8?pid=ImgDet&rs=1" 
 
-            } else if (this.fruta == Pera){ 
+            } else if (this.fruta == "opcion2"){ 
 
-                return <Img src="https://th.bing.com/th/id/OIP.u7hCosLuiV3lwGxlIUGNAwHaGK?pid=ImgDet&rs=1"></Img>
+                return "https://www.show.news/__export/1567201752167/sites/debate/img/2019/08/30/gato_png_crop1567201738546.jpg_839202635.jpg"
 
-            } else (this.fruta == Manzana){
-                return <img src="https://megaredil.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdk1UIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--af10f68261f34a74eb9c6ea73d59707018d1057c/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9TY21WemFYcGxYM1J2WDJacGRGc0hhUUlnQTJrQ0lBTTZER052Ym5abGNuUkpJZ2hxY0djR09nWkZWRG9LYzJGMlpYSjdDRG9NY1hWaGJHbDBlV2xmT2dwemRISnBjRlE2RDJKaFkydG5jbTkxYm1SYkNHa0IvMmtCLzJrQi93PT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--f9b6205701877dad933126b17f2a1a57fbbba520/176.jpg?locale=es"></img>
+            } else if (this.fruta == "opcion3"){
+                return "https://th.bing.com/th/id/R.091405999e3efb51ac07a578e8d7f4e3?rik=PldoLsV1W6pxDQ&pid=ImgRaw&r=0"
+            } 
+            else if(this.fruta == "opcion4"){
+                return "https://64.media.tumblr.com/f1ee5f169563376cbb1871c327ff2f14/a9874b93391c764e-2f/s512x512u_c1/e6f4779023d4875ba5b1a515641c5a18596d06bb.jpg"
+            }
+            else if(this.fruta == "opcion0"){
+                return "https://i0.wp.com/imagenesparapeques.com/wp-content/uploads/2022/03/Flork-19.png?fit=1548%2C1766&ssl=1"
             }
         }
     }
