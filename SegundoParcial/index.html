@@ -14,7 +14,7 @@
 <body>
 
     <div class="container m-3" id="app">
-        <button @click="getpokemon()" class="btn btn primary">Obtener</button>
+        <button @click="getpokemon()" class="btn btn-success">Obtener</button>
         <h1></h1>
 
         <div v-if="pokemon!=null" class="card mb-3" style="width: 18rem;">
@@ -25,9 +25,15 @@
 
                 <div class="card-body">
                     <h5 class="card-title">{{pokemon.name}}</h5>
-                    <p class="card-text">POKEMON</p>
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p class="card-text">Habilidades</p>
+                    <small class="badge rounded-pill text-bg-success mx-1"
+                        v-for="habilidad in pokemon.abilities">{{habilidad.ability.name}}</small>
+                    <p class="card-text">Game Index</p>
+                    <small class="badge rounded-pill text-bg-secondary mx-1"
+                        v-for="game in pokemon.game_indices">{{game.version.name}}</small>
+                    <p class="card-text">Tipos</p>
+                    <small class="badge rounded-pill text-bg-primary mx-1"
+                        v-for="tipos in pokemon.types">{{tipos.type.name}}</small>
                 </div>
             </div>
         </div>
