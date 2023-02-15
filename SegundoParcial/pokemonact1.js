@@ -15,10 +15,10 @@ const app = Vue.createApp({
             //Get obtener
             //Put modififcar 
             //Delete eliminar
-            const valor = Math.floor(Math.random() * 100);
+            const valor = Math.floor(Math.random() * 500);
             const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + valor, {
-                    method: 'Get'
-                }); // Consumir la api 
+                method: 'Get'
+            }); // Consumir la api 
 
             const datapokemon = await response.json();
             this.pokemon = datapokemon;
