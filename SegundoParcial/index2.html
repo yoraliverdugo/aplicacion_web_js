@@ -14,27 +14,32 @@
 <body>
 
     <div class="container m-3" id="app">
-        
-        <h1></h1>
+        <div class="d-flex flex-wrap"> 
 
-        <div  v-for="pokemon in pokemones" class="card mb-3" style="width: 18rem;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img :src="pokemon.sprites.other.home.front_default" class="card-img-top" alt="..." width="100"
-                        height="100">
-                </div>
+            <center v-if="loading==true">
+                <img src="https://th.bing.com/th/id/R.0ed8ff95034b2d14b07f0ea6b8635f97?rik=Xs7uGaSamaXjJg&riu=http%3a%2f%2ftusimagenesde.com%2fwp-content%2fuploads%2f2016%2f07%2fcargando-3.gif&ehk=8yQXA2BQaAVhswEO0FRJjZFMa2ybBojCDznBsthPYBA%3d&risl=&pid=ImgRaw&r=0" alt="">
+                    <p>loading ......</p>
+            </center>
 
-                <div class="card-body">
-                    <h5 class="card-title">{{pokemon.name}}</h5>
-                    <p class="card-text">Habilidades</p>
-                    <small class="badge rounded-pill text-bg-success mx-1"
-                        v-for="habilidad in pokemon.abilities">{{habilidad.ability.name}}</small>
-                    <p class="card-text">Game Index</p>
-                    <small class="badge rounded-pill text-bg-secondary mx-1"
-                        v-for="game in pokemon.game_indices">{{game.version.name}}</small>
-                    <p class="card-text">Tipos</p>
-                    <small class="badge rounded-pill text-bg-primary mx-1"
-                        v-for="tipos in pokemon.types">{{tipos.type.name}}</small>
+            <div v-for="pokemon in pokemones"  v-if="loading==false"   class="card mb-1" style="width: 50rem;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img :src="pokemon.sprites.other.home.front_default" class="card-img-top" alt="..." width="100"
+                            height="100">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{pokemon.name}}</h5>
+                        <p class="card-text">Habilidades</p>
+                        <small class="badge rounded-pill text-bg-success mx-1"
+                            v-for="habilidad in pokemon.abilities">{{habilidad.ability.name}}</small>
+                        <p class="card-text">Game Index</p>
+                        <small class="badge rounded-pill text-bg-secondary mx-1"
+                            v-for="game in pokemon.game_indices">{{game.version.name}}</small>
+                        <p class="card-text">Tipos</p>
+                        <small class="badge rounded-pill text-bg-primary mx-1"
+                            v-for="tipos in pokemon.types">{{tipos.type.name}}</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,7 +57,7 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <script src="pokemonact2.js"></script>
+    <script src="act3.js"></script>
 
 
 

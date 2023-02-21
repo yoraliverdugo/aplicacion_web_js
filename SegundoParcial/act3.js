@@ -1,9 +1,10 @@
+
 const app = Vue.createApp({
     data() {
         return {
             pokemones: null,
-            loding: true, 
-
+            loading: true,
+            limit: 100
         }
 
     },
@@ -21,8 +22,7 @@ const app = Vue.createApp({
             //Delete eliminar 
 
             var i = 1;
-
-            while (i <= 600) {
+            while (i <= limit) {
 
                 const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + i, {
                     method: 'Get'
@@ -33,14 +33,10 @@ const app = Vue.createApp({
 
                 //console.log(datapokemon.sprites.other.home.front_default) 
                 i++;
-
             }
             this.loding = false;
         }
 
     }
-
-
-
 
 }).mount('#app')
