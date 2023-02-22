@@ -2,14 +2,14 @@
 const app = Vue.createApp({
     data() {
         return {
-            pokemones: null,
-            loading: true,
-            limit: 100
+            pokemones: [],
+            loading: null,
+            limit: 50,
+            pokemondata: null
         }
 
     },
     mounted() {
-
         this.getpokemon()
     },
     methods: {
@@ -22,10 +22,10 @@ const app = Vue.createApp({
             //Delete eliminar 
 
             var i = 1;
-            while (i <= limit) {
+            while (i <= this.limit) {
 
                 const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + i, {
-                    method: 'Get'
+                    method: 'GET'
                 }); // Consumir la api 
 
                 const datapokemon = await response.json();
@@ -34,9 +34,14 @@ const app = Vue.createApp({
                 //console.log(datapokemon.sprites.other.home.front_default) 
                 i++;
             }
-            this.loding = false;
+            this.loading = false;
         }
 
+    },
+    watch: {
+        limit() {
+            this.getpokemon();
+        }
     }
 
 }).mount('#app')
